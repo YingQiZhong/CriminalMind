@@ -22,6 +22,7 @@ class Characters extends BaseController {
 
 
         // connect to the model 
+        $places = new \App\Models\People();
         // retrieve all the records    
         // get a template parser     
         $parser = \Config\Services::parser();
@@ -29,8 +30,8 @@ class Characters extends BaseController {
         return $parser->setData(['records' => $records])
                         // and have it render the template with those       
                         ->render('peoplelist');
+    
     }
-
     public function showme($id) {
         // connect to the model     
         $places = new \App\Models\People();
@@ -44,5 +45,5 @@ class Characters extends BaseController {
                         // and have it render the template with those
                         ->render('onepeople');
     }
-
+    
 }
